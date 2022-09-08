@@ -84,9 +84,17 @@ body {
   color: whitesmoke;
 }
 
-.icon:hover {
+.add:hover {
+  color: lightgreen;
+  transform: scale(1.25);
+}
+.remove:hover {
   color: #F05454;
-  transform: scale(1.5);
+  transform: scale(1.25);
+}
+.delete:hover {
+  color: red;
+  transform: scale(1.25);
 }
 
 .icon:pointer {
@@ -135,6 +143,32 @@ body {
   color: rgb(185, 185, 185);
 }
 
+.loading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  opacity: 0.7;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: repeatFade 2s linear infinite;
+}
+
+@keyframes repeatFade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
 @media only screen and (max-width: 1295px) {
   .header {
     font-size: 1.5rem;
@@ -146,6 +180,9 @@ body {
   .cart-item-image {
     min-width: 200px;
     height: 200px;
+  }
+  .header-container {
+    margin: 5px auto;
   }
   .nav {
     width: 100% !important;
@@ -160,9 +197,6 @@ body {
   .cart-item {
     display: flex;
     flex-direction: column;
-  }
-  .header-container {
-    margin: 5px auto;
   }
   .cart-item-actions {
     margin-top: 10px;

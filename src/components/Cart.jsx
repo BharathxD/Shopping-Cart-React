@@ -6,7 +6,7 @@ const Cart = (props) => {
   return (
     <div>
     <div className='header-container'>
-    <h1 className="header">Shopping Cart</h1>
+    <h1 className="header">My Cart</h1>
     </div>
     <div className="cart">
       {products.map((product) => {

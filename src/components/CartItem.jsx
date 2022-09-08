@@ -17,9 +17,9 @@ const CartItem = (props) => {
           <div>{price}$ </div>
           <div>Qty: {qty} </div>
           <div className="cart-item-actions">
-            <i className="fa-solid fa-circle-plus icon" onClick={() => onIncreaseQuantity(props.product)}></i>
-            <i className="fa-solid fa-circle-minus icon" onClick={() => onDecreaseQuantity(props.product)}></i>
-            <i className="fa-solid fa-trash icon" onClick={() => onDeleteProduct(product.id)}></i>
+            <i className="fa-solid fa-circle-plus icon add" onClick={() => onIncreaseQuantity(props.product)}></i>
+            <i className="fa-solid fa-circle-minus icon remove" onClick={() => onDecreaseQuantity(props.product)}></i>
+            <i className="fa-solid fa-trash icon delete" onClick={() => onDeleteProduct(product.id)}></i>
           </div>
         </div>
       </div>
