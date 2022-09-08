@@ -1,42 +1,30 @@
-import React from "react";
+import React from 'react';
 
 class CartItem extends React.Component {
-  constructor() {
-    super(); // Calling the constructor first
-    this.state = {
-      // Essential Data
-      price: 999,
-      title: "Phone",
-      qty: 1,
-      img: "",
-    };
-  }
-  increaseQuantity = () => {
-    console.log( );
-  }
-  render() {
-    const { title, price, qty } = this.state;
+  render () {
+    const { price, title, qty } = this.props.product;
     return (
       <div className="cart-item">
         <div className="left-block">
-          <img style={styles.image} />
+          <img style={styles.image} alt=""/>
         </div>
         <div className="right-block">
-          <div style={{ fontSize: 25 }}> {title} </div>
-          <div style={{ color: "#777" }}> {price} </div>
-          <div style={{ color: "#777" }}> {qty} </div>
+          <div style={ { fontSize: 25 } }>{title}</div>
+          <div style={ { color: '#777' } }>Rs {price} </div>
+          <div style={ { color: '#777' } }>Qty: {qty} </div>
           <div className="cart-item-actions">
             {/* Buttons */}
             <img
               alt="increase"
               className="action-icons"
-              src="https://cdn-icons-png.flaticon.com/512/992/992651.png"
-              onClick={this.increaseQuantity} 
+              src="https://cdn-icons-png.flaticon.com/512/3416/3416075.png"
+              onClick={() => this.props.onIncreaseQuantity(this.props.product)}
             />
             <img
               alt="decrease"
               className="action-icons"
-              src="https://cdn-icons-png.flaticon.com/512/992/992683.png"
+              src="https://cdn-icons-png.flaticon.com/512/1828/1828899.png"
+              onClick={() => this.props.onDecreaseQuantity(this.props.product)}
             />
             <img
               alt="delete"
@@ -55,8 +43,8 @@ const styles = {
     height: 110,
     width: 110,
     borderRadius: 4,
-    background: "#ccc",
-  },
-};
+    background: '#ccc'
+  }
+}
 
 export default CartItem;
