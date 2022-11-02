@@ -6,8 +6,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-console.log(process.env)
-
 const firebaseConfig = {
   apiKey: `${process.env.REACT_APP_MY_FIREBASE_API_KEY}`,
   authDomain: "cart-app-b9a34.firebaseapp.com",
